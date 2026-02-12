@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Galentine? 💖</title>
+    <style>
+        body {
+            background-color: #fff0f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 { color: #ff4d6d; font-size: 2.5rem; }
+
+        .gif-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .gif-container img {
+            width: 120px;
+            border-radius: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #yes-btn {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #no-btn {
+            background-color: #808080;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #celebration {
+            display: none;
+        }
+
+        .success-gif { width: 300px; border-radius: 20px; }
+        .note { color: #c9184a; font-size: 1.2rem; margin-top: 20px; padding: 0 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="main-content" class="container">
+        <h1>Will you be my Galentine? 🎀</h1>
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHY2Z3p4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/v76SdfO0U9Ucg/giphy.gif" alt="Duck">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnZ4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/L4lvBpHnJvDTe/giphy.gif" alt="Bear">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmZ4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lI4bYIOnM93Xvq/giphy.gif" alt="Girl">
+        </div>
+        <div class="buttons">
+            <button id="yes-btn" onclick="celebrate()">YES!</button>
+            <button id="no-btn" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+
+    <div id="celebration" class="container">
+        <h1>YAYYYYY! ❤️</h1>
+        <img class="success-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Z4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/artj92V8o75VPL7AeQ/giphy.gif">
+        <div class="note">
+            I love you so much and want to always stay by ur side when u are happy and sad! ❤️💋✨💖🌸
+        </div>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            const btn = document.getElementById('no-btn');
+            
+            // Calculate random positions
+            // We subtract 100 to keep the button from going off-screen
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('celebration').style.display = 'block';
+            
+            // Optional: Start confetti or other effects here
+        }
+    </script>
+</body>
+</html>
